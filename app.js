@@ -44,7 +44,8 @@ const selectItem = (event, img) => {
 	if (item === -1) {
 		sliders.push(img);
 	} else {
-		alert('Hey, Already added !');
+		sliders.pop(img);
+		element.classList.add('removed');
 	}
 };
 var timer;
@@ -112,6 +113,13 @@ const changeSlide = (index) => {
 
 	items[index].style.display = 'block';
 };
+document
+	.getElementById('search')
+	.addEventListener('keypress', function (event) {
+		if (event.key === 'Enter') {
+			document.getElementById('search-btn').click();
+		}
+	});
 
 searchBtn.addEventListener('click', function () {
 	document.querySelector('.main').style.display = 'none';

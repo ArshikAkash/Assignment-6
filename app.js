@@ -71,7 +71,7 @@ const createSlider = () => {
 	document.querySelector('.main').style.display = 'block';
 	// hide image aria
 	imagesArea.style.display = 'none';
-	const duration = document.getElementById('duration').value || 1000;
+	const duration = document.getElementById('duration').value * 1000 || 1000;
 	if (duration < 0) {
 		alert('Duration can not be negative');
 	} else {
